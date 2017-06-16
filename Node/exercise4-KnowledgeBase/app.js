@@ -222,7 +222,7 @@ bot.dialog('ShowKBResults', [
                         .title(faq.title)
                         .subtitle(`Category: ${faq.category} | Search Score: ${faq['@search.score']}`)
                         .text(faq.text.substring(0, Math.min(faq.text.length, 50) + '...'))
-                        .images([builder.CardImage.create(session, 'https://raw.githubusercontent.com/GeekTrainer/help-desk-bot-lab/develop/assets/botimages/head-smiling-medium.png')])
+                        .images([builder.CardImage.create(session, 'https://raw.githubusercontent.com/GeekTrainer/help-desk-bot-lab/master/assets/botimages/head-smiling-medium.png')])
                         .buttons([{ title: 'More details', value: `show me the article ${faq.title}`, type: 'postBack' }])
                 );
             });

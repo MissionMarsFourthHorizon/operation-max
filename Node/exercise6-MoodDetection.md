@@ -122,10 +122,10 @@ In this task you will introduce the new Text Analytics module and then consume i
                     // 1 - positive feeling / 0 - negative feeling
                     if (score < 0.5) {
                         cardText = 'I understand that you might be dissatisfied with my assistance. An IT representative will get in touch with you soon to help you.';
-                        cardImageUrl = 'https://raw.githubusercontent.com/GeekTrainer/help-desk-bot-lab/develop/assets/botimages/head-sad-small.png';
+                        cardImageUrl = 'https://raw.githubusercontent.com/GeekTrainer/help-desk-bot-lab/master/assets/botimages/head-sad-small.png';
                     } else {
                         cardText = 'Thanks for sharing your experience.';
-                        cardImageUrl = 'https://raw.githubusercontent.com/GeekTrainer/help-desk-bot-lab/develop/assets/botimages/head-smiling-small.png';
+                        cardImageUrl = 'https://raw.githubusercontent.com/GeekTrainer/help-desk-bot-lab/master/assets/botimages/head-smiling-small.png';
                     }
 
                     msg.addAttachment(

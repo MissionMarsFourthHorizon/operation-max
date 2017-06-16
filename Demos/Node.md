@@ -111,7 +111,7 @@ var bot = new builder.UniversalBot(connector, [
                                 "items": [
                                     {
                                         "type": "Image",
-                                        "url": "https://raw.githubusercontent.com/GeekTrainer/help-desk-bot-lab/develop/assets/botimages/head-smiling-medium.png",
+                                        "url": "https://raw.githubusercontent.com/GeekTrainer/help-desk-bot-lab/master/assets/botimages/head-smiling-medium.png",
                                         "horizontalAlignment": "right"
                                     }
                                 ]

@@ -155,7 +155,7 @@
                         {
                             new Image
                             {
-                                Url = "https://raw.githubusercontent.com/GeekTrainer/help-desk-bot-lab/develop/assets/botimages/head-smiling-medium.png",
+                                Url = "https://raw.githubusercontent.com/GeekTrainer/help-desk-bot-lab/master/assets/botimages/head-smiling-medium.png",
                                 Size = ImageSize.Small,
                                 HorizontalAlignment = HorizontalAlignment.Right
                             }

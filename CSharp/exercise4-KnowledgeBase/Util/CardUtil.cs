@@ -22,7 +22,7 @@
             {
                 reply.AttachmentLayout = AttachmentLayoutTypes.Carousel;
 
-                var cardImages = new CardImage[] { new CardImage("https://raw.githubusercontent.com/GeekTrainer/help-desk-bot-lab/develop/assets/botimages/head-smiling-medium.png") };
+                var cardImages = new CardImage[] { new CardImage("https://raw.githubusercontent.com/GeekTrainer/help-desk-bot-lab/master/assets/botimages/head-smiling-medium.png") };
 
                 foreach (SearchResultHit item in searchResult.Value)
                 {
