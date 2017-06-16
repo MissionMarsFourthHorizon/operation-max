@@ -1,0 +1,5 @@
+{
+  "title": "Connect to Bluetooth devices",
+  "category": "networking",
+  "text": "Thanks to Bluetooth, you can use all sorts of wireless devices with your Windows PC—Bluetooth headphones, speakers, phones, fitness trackers—just to name a few. Start by pairing your Bluetooth device with your PC. The way you do this depends on the kind of Bluetooth device you're using.\n\nTo connect a Bluetooth headset, speaker, or other audio device\n\n1. Turn on your Bluetooth audio device and make it discoverable. The way you make it discoverable depends on the device. Check the device or visit the manufacturer's website to learn how.\n2. Turn on Bluetooth on your PC if it's not on already. To do this, on the taskbar, select action center  > Bluetooth.\n3. In action center, select Connect > the device name.\n4. Follow any more instructions that might appear. Otherwise, you're done and connected.\n5. Your Bluetooth device and PC will usually automatically connect anytime the two devices are in range of each other with Bluetooth turned on."
+}

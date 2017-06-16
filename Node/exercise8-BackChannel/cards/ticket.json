@@ -1,0 +1,56 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "body": [
+        {
+            "type": "TextBlock",
+            "text": "Ticket #{ticketId}",
+            "weight": "bolder",
+            "size": "large",
+            "speak": "<s>You've created a new Ticket #{ticketId}</s><s>We will contact you soon.</s>"
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "size": "1",
+                    "items": [
+                        {
+                            "type": "FactSet",
+                            "facts": [
+                                {
+                                    "title": "Severity:",
+                                    "value": "{severity}"
+                                },
+                                {
+                                    "title": "Category:",
+                                    "value": "{category}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "size": "auto",
+                    "items": [
+                        {
+                            "type": "Image",
+                            "url": "https://raw.githubusercontent.com/GeekTrainer/help-desk-bot-lab/develop/assets/botimages/head-smiling-medium.png",
+                            "horizontalAlignment": "right"
+                        }
+                    ]
+                }
+            ],
+            "separation": "strong"
+        },
+        {
+            "type": "TextBlock",
+            "text": "{description}",
+            "speak": "",
+            "wrap": true
+        }
+    ]
+}

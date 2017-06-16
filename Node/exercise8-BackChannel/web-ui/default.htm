@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link href="https://webchat.botframework.com/css/adaptive/botchat.css" rel="stylesheet" />
+    <style>
+        .wc-chatview-panel {
+            width: 400px;
+            margin: 0 auto;
+            border: 1px solid black;
+        }
+
+        aside {
+            font-size: 12px;
+            font-family: Arial, Helvetica, sans-serif;
+            position: absolute;
+            width: calc((100% - 420px) / 2);
+            right: 0;
+            color: #3a96dd;
+        }
+
+        aside div {
+            color: black;
+        }
+
+        #results h3 {
+            margin-top: 0;
+            margin-bottom: 0;
+            cursor: pointer;
+        }
+
+        #results span {
+            color: #006621;
+        }
+
+        #results p {
+            margin-top: 0;
+            word-wrap: break-word;
+            font-weight: normal;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="bot">
+    </div>
+    <aside>
+        <h1>The user might be interested in some of these related articles:</h1>
+        <div id="results">
+            <p>No insights yet!</p>
+        </div>
+    </aside>
+    <script src="https://webchat.botframework.com/scripts/adaptive/botchat.js"></script>
+    <script>
+        var botConnection = new BotChat.DirectLine({
+            secret: '{DIRECTLINE_SECRET}'
+        });
+        var resPanel = document.getElementById('results');
+
+        BotChat.App({
+            botConnection: botConnection,
+            user: { id: 'WebChatUser' },
+            bot: { id: '{BOT_ID}' },
+            locale: 'en-us',
+        }, document.getElementById('bot'));
+
+        // catch incomming backchannel "event"
+        botConnection.activity$
+            .filter(function (activity) {
+                return activity.type === 'event' && activity.name === 'searchResults';
+            })
+            .subscribe(function (activity) {
+                updateSearchResults(activity.value)
+            });
+
+        function updateSearchResults(results) {
+            resPanel.innerHTML = ''; // clear
+            results.forEach(function (result) {
+                resPanel.appendChild(createSeachResult(result));
+            });
+        }
+
+        function createSeachResult(result) {
+            var el = document.createElement('div');
+            el.innerHTML = '<h3>' + result.title + '</h3>' +
+                '<p>' + result.text.substring(0, 140) + '...</p>';
+
+            el.getElementsByTagName('h3')[0]
+                .addEventListener('click', function () {
+                    botConnection
+                        .postActivity({
+                            type: 'event',
+                            value: this.textContent.trim(),
+                            from: { id: 'user' },
+                            name: 'showDetailsOf'
+                        })
+                        .subscribe(function (id) {
+                            console.log('event sent', id);
+                        });
+                });
+            return el;
+        }
+    </script>
+</body>
+
+</html>

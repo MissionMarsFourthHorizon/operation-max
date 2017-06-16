@@ -1,0 +1,5 @@
+{
+  "title": "Back up and restore your files in Windows 10",
+  "category": "security",
+  "text": "It's always good to have a backup. Keep copies of your files on another drive in case something happens to the originals.\n\n1. Select the Start  button, select Settings  > Update & security  > Backup  > Add a drive, and then choose an external drive or network location for your backups.\n2. All set. Every hour, we'll back up everything in your user folder (C:\\Users\\username). To change which files get backed up or how often backups happen, go to More options.\n\nIf you're missing an important file or folder, here's how to get it back:\n\n1. Type Restore files in the search box on the taskbar, and then select Restore your files with File History.\n2. Look for the file you need, then use the arrows to see all its versions.\n3. When you find the version you want, select Restore to save it in its original location. To save it in a different place, press and hold (or right-click) Restore, select Restore to, and then choose a new location."
+}

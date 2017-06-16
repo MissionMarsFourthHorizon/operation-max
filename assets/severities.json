@@ -1,0 +1,14 @@
+[
+  {
+    "canonicalForm": "high",
+    "list": ["crashing", "blocked", "important", "urgent", "lost", "privacy", "ASAP", "risk"]
+  },
+  {
+    "canonicalForm": "normal",
+    "list": []
+  },
+  {
+    "canonicalForm": "low",
+    "list": ["small", "minor", "unimportant", "suggestion", "idea"]
+  }
+]

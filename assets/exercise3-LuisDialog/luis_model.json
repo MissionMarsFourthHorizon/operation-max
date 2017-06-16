@@ -1,0 +1,208 @@
+{
+  "luis_schema_version": "2.0.0",
+  "versionId": "0.1",
+  "name": "HelpDeskBot-Exercise3",
+  "desc": "",
+  "culture": "en-us",
+  "intents": [
+    {
+      "name": "None"
+    },
+    {
+      "name": "SubmitTicket"
+    },
+    {
+      "name": "Help"
+    }
+  ],
+  "entities": [],
+  "composites": [],
+  "closedLists": [
+    {
+      "name": "category",
+      "subLists": [
+        {
+          "canonicalForm": "security",
+          "list": [
+           "password",
+           "log in",
+           "reset",
+           "account",
+           "user",
+           "pin",
+           "access",
+           "authentication"
+          ]
+        },
+        {
+          "canonicalForm": "networking",
+          "list": [
+            "network",
+            "connectivity",
+            "internet",
+            "ethernet",
+            "wifi",
+            "vpn",
+            "RAS",
+            "connect",
+            "remote"
+          ]
+        },
+        {
+          "canonicalForm": "software",
+          "list": [
+            "outlook",
+            "skype",
+            "windows",
+            "explorer",
+            "office",
+            "account",
+            "office",
+            "sound",
+            "web page",
+            "antivirus",
+            "malware",
+            "files",
+            "app",
+            "backup",
+            "video"
+          ]
+        },
+        {
+          "canonicalForm": "hardware",
+          "list": [
+            "keyboard",
+            "mouse",
+            "monitor",
+            "printer",
+            "notebook",
+            "computer",
+            "desktop",
+            "phone",
+            "replacement",
+            "device"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "severity",
+      "subLists": [
+        {
+          "canonicalForm": "high",
+          "list": [
+            "crashing",
+            "blocked",
+            "important",
+            "urgent",
+            "lost",
+            "privacy",
+            "ASAP",
+            "risk"
+          ]
+        },
+        {
+          "canonicalForm": "normal",
+          "list": [
+          ]
+        },
+        {
+          "canonicalForm": "low",
+          "list": [
+            "small",
+            "minor",
+            "unimportant",
+            "suggestion",
+            "idea"
+          ]
+        }
+      ]
+    }
+  ],
+  "bing_entities": [],
+  "actions": [],
+  "model_features": [],
+  "regex_features": [],
+  "utterances": [
+    {
+      "text": "I cannot print and I need to do it urgently.",
+      "intent": "SubmitTicket",
+      "entities": []
+    },
+    {
+      "text": "I need to request a new RAS token.",
+      "intent": "SubmitTicket",
+      "entities": []
+    },
+    {
+      "text": "I need to reset my password ASAP.",
+      "intent": "SubmitTicket",
+      "entities": []
+    },
+    {
+      "text": "I cannot open a web page and my deadline is at risk.",
+      "intent": "SubmitTicket",
+      "entities": []
+    },
+    {
+      "text": "My computer won't recognize my USB device.",
+      "intent": "SubmitTicket",
+      "entities": []
+    },
+    {
+      "text": "The internet is slow.",
+      "intent": "SubmitTicket",
+      "entities": []
+    },
+    {
+      "text": "My computer is making a grinding noise.",
+      "intent": "SubmitTicket",
+      "entities": []
+    },
+    {
+      "text": "I accidentally deleted some files. Can I get them back?",
+      "intent": "SubmitTicket",
+      "entities": []
+    },
+    {
+      "text": "I can't log in, I'm blocked.",
+      "intent": "SubmitTicket",
+      "entities": []
+    },
+    {
+      "text": "I need to access my files from outside the corporate network.",
+      "intent": "SubmitTicket",
+      "entities": []
+    },
+    {
+      "text": "My phone is lost and I need to recover my data.",
+      "intent": "SubmitTicket",
+      "entities": []
+    },
+    {
+      "text": "Windows says it is not activated, probably minor.",
+      "intent": "SubmitTicket",
+      "entities": []
+    },
+    {
+      "text": "Small suggestion, can we have wifi on the dinning room?",
+      "intent": "SubmitTicket",
+      "entities": []
+    },
+    {
+      "text": "help",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "hi",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "hello",
+      "intent": "Help",
+      "entities": []
+    }
+  ]
+}

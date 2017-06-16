@@ -1,0 +1,5 @@
+{
+  "title": "Turn on device encryption",
+  "category": "security",
+  "text": "Device encryption helps protect your data by encrypting it. Only someone with the right encryption key (like a password) can decrypt it.\n\n1. Sign in to Windows with an administrator account.\n2. Go to Start, enter encryption, and select Change device encryption settings from the list of results.\n3. Select Manage BitLocker, select Turn on BitLocker, and then follow the instructions.\n\nIf you need to decrypt your PC, find your recovery key."
+}

@@ -1,0 +1,272 @@
+{
+  "luis_schema_version": "2.1.0",
+  "versionId": "0.1",
+  "name": "HelpDeskBot-Exercise7",
+  "desc": "",
+  "culture": "en-us",
+  "intents": [
+    {
+      "name": "ExploreKnowledgeBase"
+    },
+    {
+      "name": "HandOffToHuman"
+    },
+    {
+      "name": "Help"
+    },
+    {
+      "name": "None"
+    },
+    {
+      "name": "SubmitTicket"
+    }
+  ],
+  "entities": [],
+  "composites": [],
+  "closedLists": [
+    {
+      "name": "category",
+      "subLists": [
+        {
+          "canonicalForm": "security",
+          "list": [
+            "password",
+            "log in",
+            "reset",
+            "account",
+            "user",
+            "pin",
+            "access",
+            "authentication"
+          ]
+        },
+        {
+          "canonicalForm": "networking",
+          "list": [
+            "network",
+            "connectivity",
+            "internet",
+            "ethernet",
+            "wifi",
+            "vpn",
+            "ras",
+            "connect",
+            "remote"
+          ]
+        },
+        {
+          "canonicalForm": "software",
+          "list": [
+            "skype",
+            "windows",
+            "explorer",
+            "office",
+            "account",
+            "office",
+            "sound",
+            "web page",
+            "antivirus",
+            "malware",
+            "files",
+            "app",
+            "backup",
+            "video"
+          ]
+        },
+        {
+          "canonicalForm": "hardware",
+          "list": [
+            "keyboard",
+            "mouse",
+            "monitor",
+            "printer",
+            "notebook",
+            "computer",
+            "desktop",
+            "phone",
+            "replacement",
+            "device"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "severity",
+      "subLists": [
+        {
+          "canonicalForm": "high",
+          "list": [
+            "crashing",
+            "blocked",
+            "important",
+            "urgent",
+            "lost",
+            "privacy",
+            "asap",
+            "risk"
+          ]
+        },
+        {
+          "canonicalForm": "normal",
+          "list": []
+        },
+        {
+          "canonicalForm": "low",
+          "list": [
+            "small",
+            "minor",
+            "unimportant",
+            "suggestion",
+            "idea"
+          ]
+        }
+      ]
+    }
+  ],
+  "bing_entities": [],
+  "actions": [],
+  "model_features": [],
+  "regex_features": [],
+  "utterances": [
+    {
+      "text": "i cannot print and i need to do it urgently.",
+      "intent": "SubmitTicket",
+      "entities": []
+    },
+    {
+      "text": "i need to request a new ras token.",
+      "intent": "SubmitTicket",
+      "entities": []
+    },
+    {
+      "text": "i need to reset my password asap.",
+      "intent": "SubmitTicket",
+      "entities": []
+    },
+    {
+      "text": "i cannot open a web page and my deadline is at risk.",
+      "intent": "SubmitTicket",
+      "entities": []
+    },
+    {
+      "text": "i can't log in, i'm blocked.",
+      "intent": "SubmitTicket",
+      "entities": []
+    },
+    {
+      "text": "my computer won't recognize my usb device.",
+      "intent": "SubmitTicket",
+      "entities": []
+    },
+    {
+      "text": "my phone is lost and i need to recover my data.",
+      "intent": "SubmitTicket",
+      "entities": []
+    },
+    {
+      "text": "i accidentally deleted some files. can i get them back?",
+      "intent": "SubmitTicket",
+      "entities": []
+    },
+    {
+      "text": "my computer is making a grinding noise.",
+      "intent": "SubmitTicket",
+      "entities": []
+    },
+    {
+      "text": "windows says it is not activated, probably minor.",
+      "intent": "SubmitTicket",
+      "entities": []
+    },
+    {
+      "text": "i need to access my files from outside the corporate network.",
+      "intent": "SubmitTicket",
+      "entities": []
+    },
+    {
+      "text": "the internet is slow.",
+      "intent": "SubmitTicket",
+      "entities": []
+    },
+    {
+      "text": "small suggestion, can we have wifi on the dinning room?",
+      "intent": "SubmitTicket",
+      "entities": []
+    },
+    {
+      "text": "explore hardware",
+      "intent": "ExploreKnowledgeBase",
+      "entities": []
+    },
+    {
+      "text": "explore knowledge base",
+      "intent": "ExploreKnowledgeBase",
+      "entities": []
+    },
+    {
+      "text": "find me articles about hardware",
+      "intent": "ExploreKnowledgeBase",
+      "entities": []
+    },
+    {
+      "text": "how to use word online",
+      "intent": "ExploreKnowledgeBase",
+      "entities": []
+    },
+    {
+      "text": "how to use powerpoint online",
+      "intent": "ExploreKnowledgeBase",
+      "entities": []
+    },
+    {
+      "text": "how to use outlook online",
+      "intent": "ExploreKnowledgeBase",
+      "entities": []
+    },
+    {
+      "text": "i want to explore networking articles",
+      "intent": "ExploreKnowledgeBase",
+      "entities": []
+    },
+    {
+      "text": "find me articles about software",
+      "intent": "ExploreKnowledgeBase",
+      "entities": []
+    },
+    {
+      "text": "i want to explore software articles",
+      "intent": "ExploreKnowledgeBase",
+      "entities": []
+    },
+    {
+      "text": "i want to know how to use outlook online",
+      "intent": "ExploreKnowledgeBase",
+      "entities": []
+    },
+    {
+      "text": "hello",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "help",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "hi",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "contact me to an human being",
+      "intent": "HandOffToHuman",
+      "entities": []
+    },
+    {
+      "text": "i want to talk to an it representative",
+      "intent": "HandOffToHuman",
+      "entities": []
+    }
+  ]
+}
