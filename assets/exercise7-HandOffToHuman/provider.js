@@ -44,7 +44,7 @@ function Provider () {
     const peekConversation = (agent) => {
         var conversation = data.sort((a,b) => a.timestamp < b.timestamp).find((conversation) => conversation.state === ConversationState.WaitingForAgent);
         if (conversation) {
-            conversation.state = ConversationState.WaitingForAgent;
+            conversation.state = ConversationState.ConnectedToAgent;
             conversation.agent = agent;
         }
         return conversation;
