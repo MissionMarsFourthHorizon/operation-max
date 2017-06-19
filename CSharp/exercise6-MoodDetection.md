@@ -76,14 +76,14 @@ In this task you will create a new class to call the **Text Analytics API** from
     ```CSharp
     public async Task StartAsync(IDialogContext context)
     {
-        PromptDialog.Text(context, this.MessageReciveAsync, "Can you please give me feedback about this experience?");
+        PromptDialog.Text(context, this.MessageReceivedAsync, "Can you please give me feedback about this experience?");
     }
     ```
 
-1. Add a new method called `MessageReciveAsync`. This method receives the user's response and sends it to the Text Analytics API to evaluate the user sentiments. Depending on the response (greater or lower than 0.5) a different message is displayed to the user.
+1. Add a new method called `MessageReceivedAsync`. This method receives the user's response and sends it to the Text Analytics API to evaluate the user sentiments. Depending on the response (greater or lower than 0.5) a different message is displayed to the user.
 
     ```CSharp
-    public async Task MessageReciveAsync(IDialogContext context, IAwaitable<string> result)
+    public async Task MessageReceivedAsync(IDialogContext context, IAwaitable<string> result)
     {
         var response = await result;
 
