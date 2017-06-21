@@ -63,8 +63,8 @@ You can also use an [Adaptive Cards](http://adaptivecards.io/) to show the ticke
 
 If you want to continue working on your own you can try with these tasks:
 
-* Send a welcome message to the bot relying on the conversationUpdate event, as explained [here](https://docs.microsoft.com/en-us/bot-framework/nodejs/bot-builder-nodejs-handle-conversation-events#greet-a-user-on-conversation-join).
-* Send a typing indicator to the bot while it calls the Tickets API, as explained [here](https://docs.microsoft.com/en-us/bot-framework/nodejs/bot-builder-nodejs-send-typing-indicator).
+* Send a welcome message to the bot relying on the conversationUpdate event, as explained in the [C#](https://docs.microsoft.com/en-us/bot-framework/dotnet/bot-builder-dotnet-activities#conversationupdate) and [Node](https://docs.microsoft.com/en-us/bot-framework/nodejs/bot-builder-nodejs-handle-conversation-events#greet-a-user-on-conversation-join) version.
+* Send a typing indicator to the bot while it calls the Tickets API, as explained in the [C#](https://docs.microsoft.com/en-us/bot-framework/dotnet/bot-builder-dotnet-activities#typing) and [Node](https://docs.microsoft.com/en-us/bot-framework/nodejs/bot-builder-nodejs-send-typing-indicator) version.
 
 ## Resources
 
