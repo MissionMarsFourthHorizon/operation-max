@@ -23,6 +23,6 @@ You will need both a code editor installed, such as [Visual Studio Code](https:/
 
 ## Resources
 
-- You may find helpful resources in the [Bot Framework documentation](https://docs.microsoft.com/en-us/bot-framework/).
+* You may find helpful resources in the [Bot Framework documentation](https://docs.microsoft.com/en-us/bot-framework/).
 
-- You may also want to use an additional package, such as [dotenv](https://github.com/motdotla/dotenv) for managing environmental variables.
+* For Node.js, you may also want to use an additional package for managing environmental variables, such as [dotenv](https://github.com/motdotla/dotenv).

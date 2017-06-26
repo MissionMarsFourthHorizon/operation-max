@@ -1,4 +1,4 @@
-# Exercise 3: Making the Bot Smarter with Language Understanding
+# Exercise 3: Making the Bot Smarter with Natural Language Processing (NLP)
 
 In this exercise you will learn how to add natural language understanding abilities to the bot to enhance the user experience when creating a help desk ticket. Throughout this lab you will use LUIS (Language Understanding Intelligent Service), which is part of the Azure Cognitive Services offering.
 
@@ -10,11 +10,11 @@ Inside these folders for either [C#](./CSharp/exercise3-LuisDialog) or [Node.js]
 
 To successfully complete this exercise, your bot must be able to perform the following actions:
 
-- Allow the user to type a full sentence describing his problem. The system should be able to detect:
-  - When the user is submitting a help desk ticket
-  - The severity (if provided)
-  - The category (if provided)
-- Update the bot to use the LUIS model
+* Allow the user to type a full sentence describing his problem. The system should be able to detect:
+  * When the user is submitting a help desk ticket
+  * The severity (if provided)
+  * The category (if provided)
+* Update the bot to use the LUIS model
 
 ## Prerequisites
 
@@ -27,15 +27,15 @@ You need to create a LUIS model with entities and utterances to be able to recog
 
 ![exercise3-dialog](./Node/images/exercise3-dialog.png)
 
-In Node.js you should use the LuisRecognizer into your bot, with this code to avoid the recognizer to take control when the bot prompts the user.
+> **NOTE:** In _Node.js_ you will be using `LuisRecognizer` to pass calls to LUIS. To avoid invoking LUIS when the user is in a dialog, you can use `onEnabled` to detect the current state of the bot and disable the recognizer.
 
-```javascript
-var luisRecognizer = new builder.LuisRecognizer(process.env.LUIS_MODEL_URL).onEnabled((context, callback) => {
+  ```javascript
+  var luisRecognizer = new builder.LuisRecognizer(process.env.LUIS_MODEL_URL).onEnabled((context, callback) => {
     var enabled = context.dialogStack().length === 0;
     callback(null, enabled);
-});
-bot.recognizer(luisRecognizer);
-```
+  });
+  bot.recognizer(luisRecognizer);
+  ```
 
 > **NOTE:** If you are already familiar with LUIS, you can import the file `luis_model.json` located under the [assets](assets/exercise3-LuisDialog) folder of this exercise into your account, train and publish the model. However, if you are new to LUIS, we recommend you work through creating the model from scratch for learning purposes.
 
@@ -50,6 +50,6 @@ If you want to continue working on your own you can try with these tasks:
 
 ## Resources
 
-- [Entities in LUIS](https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/luis-concept-entity-types)
-- [Enable language understanding with LUIS in .NET](https://docs.microsoft.com/en-us/bot-framework/dotnet/bot-builder-dotnet-luis-dialogs)
-- [Recognize user intent in Node.js](https://docs.microsoft.com/en-us/bot-framework/nodejs/bot-builder-nodejs-recognize-intent)
+* [Entities in LUIS](https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/luis-concept-entity-types)
+* [Enable language understanding with LUIS in .NET](https://docs.microsoft.com/en-us/bot-framework/dotnet/bot-builder-dotnet-luis-dialogs)
+* [Recognize user intent in Node.js](https://docs.microsoft.com/en-us/bot-framework/nodejs/bot-builder-nodejs-recognize-intent)

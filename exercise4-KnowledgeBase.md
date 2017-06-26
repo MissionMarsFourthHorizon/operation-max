@@ -4,7 +4,7 @@ Your bots can also help the user navigate large amounts of content and create a 
 
 [Azure Cosmos DB](https://azure.microsoft.com/en-us/services/cosmos-db/) is Microsoft's globally distributed, multi-model database service for mission-critical applications. It supports different data models. In this exercise you will use its Document DB API, that will allow you to store knowledge base articles as JSON documents.
 
-[Azure Search](https://azure.microsoft.com/en-us/services/search/) is a fully managed cloud search service that provides a rich search experience to custom applications. Azure Search can also index content from various sources (Azure SQL DB, Cosmos DB, Blob Storage, Table Storage), supports "push" indexing for other sources of data, and can open PDFs, Office documents and other formats containing unstructured data. The content catalog goes into an Azure Search index, which you can then query from bot dialogs.
+[Azure Search](https://azure.microsoft.com/en-us/services/search/) is a fully managed cloud search service that provides a rich search experience to custom applications. Azure Search can also index content from various sources (Azure SQL DB, Cosmos DB, Blob Storage, Table Storage), supports "push" indexing for other sources of data, can parse PDFs, Office documents, and other formats containing unstructured data. The content catalog goes into an Azure Search index, which you can then query from bot dialogs.
 
 Inside these folders for either [C#](./CSharp/exercise4-KnowledgeBase) or [Node.js](./Node/exercise4-KnowledgeBase) you will find a solution with the code that results from completing the steps in this exercise. You can use this solution as guidance if you need additional help as you work through this exercise.
 
@@ -59,12 +59,14 @@ https://helpdeskbotsearch.search.windows.net/indexes/knowledge-base-index/docs?a
 ```
 
 Where the `{query_placeholder}` can be something like:
+
 * `$filter=category eq 'hardware'`: to retrieve the articles within a category
 * `$filter='title eq 'some title'`: to retrieve an article by title
 * `search=OneDrive` to search for articles about OneDrive
 * `facet=category` to list the categories and the number of articles within that category
 
 For more information see these articles:
+
 * [Query your Azure Search index](https://docs.microsoft.com/en-us/azure/search/search-query-overview)
 * [OData Expression Syntax for Azure Search](https://docs.microsoft.com/en-us/rest/api/searchservice/odata-expression-syntax-for-azure-search)
 
@@ -72,14 +74,14 @@ For more information see these articles:
 
 There are many different ways in which you can implement the bot dialogs. Here is a proposal for each language:
 
-In Node.js add the following Dialogs:
+In **Node.js** add the following Dialogs:
 
 * A `SearchKB` dialog that matches the `/^search about (.*)/i` regex and performs a free text search in Azure Search using the `search=...` query.
 * An `ExploreKnowledgeBase` dialog for the "explore {category}" utterance with two waterfall steps. The first one tries to get the category detected by Luis, if not found, retrieve the list of categories from Azure Search and presents them to the user using `builder.Prompts.choice()`. The second Waterfall performs a search by article category using a `$filter=category eq '{category}'` query. The results are shown in a new `ShowKBResults` dialog.
 * The `ShowKBResults` dialog shows each article using a carousel of `builder.ThumbnailCard(session)`. To display a carousel you should use: `builder.Message(session).attachmentLayout(builder.AttachmentLayout.carousel);`
 * A third `DetailsOf` dialog that matches the `/^show me the article (.*)/i` regex and performs a search by title in Azure Search using a `$filter=title eq '${title}'` query.
 
-In C# add the following Dialogs and Scorables:
+In **C#** add the following Dialogs and Scorables:
 
 * Create a `CategoryExplorerDialog` that if the category was not detected retrieves the list of categories from Azure Search and presents them to the user using `PromptDialog.Choice()`. If the category is present performs a search by article category using a `$filter=category eq '{category}'` query. The results are shown using a carousel of `CardImage`.
 * In `RootDialog.cs` add a method tagged with the `[LuisIntent("ExploreKnowledgeBase")]` attribute that extracts the category and calls the `CategoryExplorerDialog`.
@@ -98,6 +100,6 @@ If you want to continue working on your own you can try with these tasks:
 
 ## Resources
 
-- [Azure Search](https://azure.microsoft.com/en-us/services/search/)
-- [Azure Cosmos DB](https://azure.microsoft.com/en-us/services/cosmos-db/)
-- [Implement global message handlers using Scorables](https://docs.microsoft.com/en-us/bot-framework/dotnet/bot-builder-dotnet-global-handlers)
+* [Azure Search](https://azure.microsoft.com/en-us/services/search/)
+* [Azure Cosmos DB](https://azure.microsoft.com/en-us/services/cosmos-db/)
+* [Implement global message handlers using Scorables](https://docs.microsoft.com/en-us/bot-framework/dotnet/bot-builder-dotnet-global-handlers)

@@ -14,12 +14,12 @@ To successfully complete this exercise, your bot must be able to perform the fol
 
 Here is a sample converastion with the bot:
 
-  ![exercise2-emulator-adaptivecards](./Node/images/exercise2-emulator-adaptivecards.png)
+![exercise2-emulator-adaptivecards](./Node/images/exercise2-emulator-adaptivecards.png)
 
 ## Prerequisites
 
 * You must have either completed the prior exercise, or you can use the starting point provided for either [C#](./CSharp/exercise1-EchoBot) or [Node.js](./Node/exercise1-EchoBot).
-* A code editor like [Visual Studio Code](https://code.visualstudio.com/download) (preferred) or Visual Studio 2017 Community or higher
+* A code editor like [Visual Studio Code](https://code.visualstudio.com/download) (for Node.js), or [Visual Studio 2017 Community](https://www.visualstudio.com/downloads) or higher for C#
 
 ## Introducing the Bot to the User
 
@@ -29,21 +29,22 @@ Whenever you create a bot you need to ensure the user knows what options are ava
 
 The trouble ticket needs to store the following information:
 
-- Severity
-  - High
-  - Normal
-  - Low
-- Category
-  - Software
-  - Hardware
-  - Networking
-  - Security
-- Description
+* Severity
+  * High
+  * Normal
+  * Low
+* Category
+  * Software
+  * Hardware
+  * Networking
+  * Security
+* Description
 
 The order in which the bot collects the information is up to you. You can use:
-  * A waterfall pattern for the conversation flow
-  * `Prompts.choice()` and `Prompts.text()` to prompt for the severity and category of the ticket.
-  * `Prompts.confirm()` to confirm that the ticket information is correct.
+
+* A waterfall pattern for the conversation flow
+* `Prompts.choice()` and `Prompts.text()` to prompt for the severity and category of the ticket.
+* `Prompts.confirm()` to confirm that the ticket information is correct.
 
 ## In-memory Tickets API
 
@@ -56,8 +57,9 @@ For purposes of this exercise, **no database or other eternal datastore** is nee
 ## Adaptive Cards
 
 You can also use an [Adaptive Cards](http://adaptivecards.io/) to show the ticket details.
-  * For Node.js you can use the [ticket.json](./assets/exercise2-TicketSubmissionDialog/ticket.json) file from the [assets](./assets) folder of this hands-on lab as explained [here](https://docs.microsoft.com/en-us/bot-framework/rest-api/bot-framework-rest-connector-add-rich-cards#adaptive-card).
-  * For C#, you can use the Microsoft.AdaptiveCards NuGet package as shown [here](https://docs.microsoft.com/en-us/bot-framework/dotnet/bot-builder-dotnet-add-rich-card-attachments#a-idadaptive-carda-add-an-adaptive-card-to-a-message).
+
+* For Node.js you can use the [ticket.json](./assets/exercise2-TicketSubmissionDialog/ticket.json) file from the [assets](./assets) folder of the [hands-on lab](https://docs.microsoft.com/en-us/bot-framework/rest-api/bot-framework-rest-connector-add-rich-cards#adaptive-card).
+* For C#, you can use the [Microsoft.AdaptiveCards NuGet package](https://docs.microsoft.com/en-us/bot-framework/dotnet/bot-builder-dotnet-add-rich-card-attachments#a-idadaptive-carda-add-an-adaptive-card-to-a-message).
 
 ## Further Challenges
 
@@ -65,6 +67,7 @@ If you want to continue working on your own you can try with these tasks:
 
 * Send a welcome message to the bot relying on the conversationUpdate event, as explained in the [C#](https://docs.microsoft.com/en-us/bot-framework/dotnet/bot-builder-dotnet-activities#conversationupdate) and [Node](https://docs.microsoft.com/en-us/bot-framework/nodejs/bot-builder-nodejs-handle-conversation-events#greet-a-user-on-conversation-join) version.
 * Send a typing indicator to the bot while it calls the Tickets API, as explained in the [C#](https://docs.microsoft.com/en-us/bot-framework/dotnet/bot-builder-dotnet-activities#typing) and [Node](https://docs.microsoft.com/en-us/bot-framework/nodejs/bot-builder-nodejs-send-typing-indicator) version.
+* Update the data store for the trouble tickets to use a database, such as SQL Server, MongoDB, or Cosmos DB.
 
 ## Resources
 

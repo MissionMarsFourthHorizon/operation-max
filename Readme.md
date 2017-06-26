@@ -2,12 +2,13 @@
 
 ## Overview
 
-Throughout these labs you will learn how to create a Help Desk bot. You can choose between C# and Node.js and detailed step-by-step instructions and high-level instructions. You are free to use either sets of instructions to complete the lab.
+Throughout these labs you will learn how to create a Help Desk bot. The labs are available in both C# and Node.js. When completing the lab, you can choose to use either the high level instructions, which provide guidance, or the step-by-step instructions.
 
 The goal of the high-level steps is to offer a challenge to developers who like to work through things on their own with minimal guidance. The goal of the step-by-step instructions is to provide prescriptive instructions for developers who are looking for a more structured experience. You may find reading through the high-level steps first, and then using the step-by-step instructions for additional support, can be a successful way to complete the exercises.
 
-You can perform all the exercises in order, or do only try some of them. Each exercise instructs which code to use as starting point, if you did not make the previous exercise. In addition, each exercise contains additional challenges (without provided solutions), offering you the opportunity to enhance your bot and gain more skills.
+The labs are designed to build on one another, so you will be creating the entire bot from scratch. However, if you wish to choose just a couple of the labs, you can use the starting code indicated in each lab.
 
+Each lab contains a set of _additional challenges_, which allow you to both enhance your bot and grow your skills. These are considered part of the lab, and we strongly encourage you to try at least one for each lab.
 
 |   | Exercise                                                        | High Level Instructions                            | Detailed Instructions                                                                                   |
 |---|-----------------------------------------------------------------|--------------------------------------------------  |---------------------------------------------------------------------------------------------------------|

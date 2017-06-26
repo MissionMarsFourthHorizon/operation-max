@@ -120,4 +120,3 @@ Next, test your bot by using the Bot Framework Emulator to see it in action. The
 1. You may see that the bot responds to each message you send by echoing back your message prefixed with the text "You said" and ending in the text 'which was ## characters', where ## represents the number of characters in the user's message.
 
     ![exercise1-echo-bot](./images/exercise1-echo-bot.png)
-
