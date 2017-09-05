@@ -31,7 +31,6 @@ server.post('/api/messages', connector.listen());
 var bot = new builder.UniversalBot(connector, (session, args, next) => {
     session.endDialog(`I'm sorry, I did not understand '${session.message.text}'.\nType 'help' to know more about me :)`);
 });
-// var luisModelUrl = process.env.LUIS_MODEL_URL || 'https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/6d4e8f19-969e-4c8c-97cf-1c9e51e00b17?subscription-key=991d4cb641074f1c9ee22663d11e5db9&timezoneOffset=0&verbose=true&q=';
 var luisRecognizer = new builder.LuisRecognizer(process.env.LUIS_MODEL_URL).onEnabled(function (context, callback) {
     var enabled = context.dialogStack().length === 0;
     callback(null, enabled);
