@@ -1,5 +1,6 @@
 /* jshint esversion: 6 */
 require('dotenv').config();
+path = require('path');
 const restify = require('restify');
 const fs = require('fs');
 const builder = require('botbuilder');
@@ -81,7 +82,7 @@ var bot = new builder.UniversalBot(connector, [
 ]);
 
 const createCard = (ticketId, data) => {
-    var cardTxt = fs.readFileSync('C:/projects/help-desk-bot-lab/Node/exercise2-TicketSubmissionDialog/cards/ticket.json', 'UTF-8');
+    var cardTxt = fs.readFileSync(path.join(__dirname, "/cards/ticket.json"), 'UTF-8');
 
     cardTxt = cardTxt.replace(/{ticketId}/g, ticketId)
                     .replace(/{severity}/g, data.severity)
