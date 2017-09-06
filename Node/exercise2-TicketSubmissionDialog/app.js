@@ -82,8 +82,8 @@ var bot = new builder.UniversalBot(connector, [
 ]);
 
 const createCard = (ticketId, data) => {
-    var cardTxt = fs.readFileSync(path.join(__dirname, "/cards/ticket.json"), 'UTF-8');
-
+    var cardTxt = fs.readFileSync('./cards/ticket.json', 'UTF-8');
+    
     cardTxt = cardTxt.replace(/{ticketId}/g, ticketId)
                     .replace(/{severity}/g, data.severity)
                     .replace(/{category}/g, data.category)
