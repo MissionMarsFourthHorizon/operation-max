@@ -1,6 +1,5 @@
 /* jshint esversion: 6 */
 require('dotenv').config();
-const path = require('path');
 const restify = require('restify');
 const fs = require('fs');
 const builder = require('botbuilder');
