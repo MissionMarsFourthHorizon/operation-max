@@ -30,7 +30,6 @@ server.post('/api/messages', connector.listen());
 var bot = new builder.UniversalBot(connector, (session, args, next) => {
     session.endDialog(`I'm sorry, I did not understand '${session.message.text}'.\nType 'help' to know more about me :)`);
 });
-
 var luisRecognizer = new builder.LuisRecognizer(process.env.LUIS_MODEL_URL).onEnabled(function (context, callback) {
     var enabled = context.dialogStack().length === 0;
     callback(null, enabled);
@@ -39,9 +38,9 @@ bot.recognizer(luisRecognizer);
 
 bot.dialog('Help',
     (session, args, next) => {
-        session.endDialog(`I'm the help desk bot and I can help you create a ticket.\n` +
+        session.send(`I'm the help desk bot and I can help you create a ticket.\n` +
             `You can tell me things like _I need to reset my password_ or _I cannot print_.`);
-        builder.Prompts.text(session, 'First, please briefly describe your problem to me.');
+            session.endDialog('First, please briefly describe your problem to me.');        
     }
 ).triggerAction({
     matches: 'Help'
@@ -49,6 +48,7 @@ bot.dialog('Help',
 
 bot.dialog('SubmitTicket', [
     (session, args, next) => {
+
         var category = builder.EntityRecognizer.findEntity(args.intent.entities, 'category');
         var severity = builder.EntityRecognizer.findEntity(args.intent.entities, 'severity');
 
@@ -122,7 +122,6 @@ bot.dialog('SubmitTicket', [
 
 const createCard = (ticketId, data) => {
     var cardTxt = fs.readFileSync('./cards/ticket.json', 'UTF-8');
-
     cardTxt = cardTxt.replace(/{ticketId}/g, ticketId)
                     .replace(/{severity}/g, data.severity)
                     .replace(/{category}/g, data.category)
